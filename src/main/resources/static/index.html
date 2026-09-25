@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7f2">
+  <title>Form &amp; Field — Portfolio studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Form and Field home">
+      <span class="brand-mark">f.</span>
+      <span>form<span class="brand-amp">&amp;</span>field</span>
+    </a>
+    <div class="topbar-right">
+      <span class="connection"><span class="connection-dot" id="connection-dot"></span><span id="connection-label">Checking Gemini</span></span>
+      <span class="topbar-note">YOUR PERSONAL PORTFOLIO STUDIO</span>
+    </div>
+  </header>
+
+  <main class="studio">
+    <section class="editor" aria-labelledby="page-title">
+      <div class="editor-inner">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A little help telling your story</p>
+        <h1 id="page-title">Make your work<br><em>impossible to miss.</em></h1>
+        <p class="lede">Give us the raw notes. Gemini will shape them into a portfolio that sounds like you.</p>
+
+        <form id="portfolio-form">
+          <div class="field-heading">
+            <label for="brief">Your story</label>
+            <span class="character-count"><span id="character-count">0</span> / 6000</span>
+          </div>
+          <textarea id="brief" name="brief" maxlength="6000" required placeholder="I'm a product designer in Brooklyn. I've spent 6 years making healthcare tools feel more human. At Acme, I led a redesign that made appointment booking much easier. Outside work, I mentor new designers and make pottery..."></textarea>
+          <div class="prompt-footer">
+            <span>Role, projects, wins, links, the bits that make you you.</span>
+            <button class="text-button" id="example-button" type="button">Try an example <span aria-hidden="true">↗</span></button>
+          </div>
+
+          <fieldset class="style-fieldset">
+            <legend>Pick a direction</legend>
+            <div class="style-options">
+              <label class="style-option is-selected">
+                <input type="radio" name="style" value="editorial" checked>
+                <span class="style-swatch swatch-editorial"></span>
+                <span class="style-copy"><strong>Editorial</strong><small>Quiet confidence</small></span>
+              </label>
+              <label class="style-option">
+                <input type="radio" name="style" value="playful">
+                <span class="style-swatch swatch-playful"></span>
+                <span class="style-copy"><strong>Playful</strong><small>Bright &amp; curious</small></span>
+              </label>
+              <label class="style-option">
+                <input type="radio" name="style" value="minimal">
+                <span class="style-swatch swatch-minimal"></span>
+                <span class="style-copy"><strong>Minimal</strong><small>Clear &amp; direct</small></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <button class="generate-button" type="submit" id="generate-button">
+            <span id="button-label">Build my portfolio</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <p class="privacy-note"><span aria-hidden="true">✳</span> Your Gemini key stays on your server. Your notes aren't stored.</p>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="editor-index" aria-hidden="true"><span>01</span><span class="index-rule"></span><span>02</span></div>
+    </section>
+
+    <section class="preview-area" aria-label="Portfolio preview">
+      <div class="preview-toolbar">
+        <div class="preview-title"><span class="preview-live-dot"></span><span>LIVE PREVIEW</span><span class="preview-version" id="preview-version">YOUR CANVAS</span></div>
+        <button class="download-button" id="download-button" type="button" disabled><span aria-hidden="true">↓</span> Export HTML</button>
+      </div>
+      <div class="preview-stage" id="preview-stage">
+        <div class="portfolio-page empty-page" id="portfolio-page" data-style="editorial">
+          <div class="portfolio-nav">
+            <span class="portfolio-monogram" id="preview-monogram">Y.</span>
+            <span class="portfolio-nav-note">INDEPENDENT CREATIVE</span>
+            <span class="portfolio-nav-availability"><span></span> OPEN TO OPPORTUNITIES</span>
+          </div>
+          <div class="portfolio-hero">
+            <div class="hero-copy">
+              <p class="portfolio-role" id="preview-role">YOUR NEXT CHAPTER</p>
+              <h2 id="preview-headline">A good story<br>starts with <i>you.</i></h2>
+              <p class="portfolio-intro" id="preview-introduction">Your experience, your point of view, your work. Let's give it a place to live.</p>
+              <span class="hero-location" id="preview-location">SOMEWHERE, EARTH</span>
+            </div>
+            <div class="hero-art" aria-label="Creative desk with a laptop and workspace" role="img">
+              <div class="art-caption">A BODY OF WORK<br><span>MADE WITH INTENTION</span></div>
+              <span class="art-stamp">EST.<br>YOU</span>
+            </div>
+          </div>
+          <div class="portfolio-section projects-section">
+            <div class="section-heading"><span>SELECTED WORK</span><span class="section-counter" id="project-count">00 — 00</span></div>
+            <div class="project-list" id="preview-projects">
+              <article class="project-row sample-project"><span class="project-number">01</span><div><h3>The next great thing</h3><p>Your best work belongs here.</p></div><span class="project-arrow">↗</span></article>
+              <article class="project-row sample-project"><span class="project-number">02</span><div><h3>A thoughtful little idea</h3><p>Make the details count.</p></div><span class="project-arrow">↗</span></article>
+            </div>
+          </div>
+          <div class="portfolio-section experience-section">
+            <div class="section-heading"><span>CAREER NOTES</span><span>02 / EXPERIENCE</span></div>
+            <div id="preview-experience"><article class="experience-row"><div><h3>Your next chapter</h3><p>Add the places and work that shaped you.</p></div><span>NOW</span></article></div>
+          </div>
+          <div class="portfolio-section about-section">
+            <div class="section-heading"><span>THE PERSON BEHIND IT</span><span>01 / ABOUT</span></div>
+            <div class="about-content"><h3>Good work,<br><i>good people.</i></h3><div><p id="preview-about">A thoughtful introduction is on its way. Add a few details about yourself to get started.</p><div class="skill-list" id="preview-skills"><span>YOUR SKILLS</span><span>YOUR CRAFT</span><span>YOUR PERSPECTIVE</span></div></div></div>
+          </div>
+          <footer class="portfolio-footer"><span id="preview-name">YOUR NAME</span><span id="preview-email">LET'S MAKE SOMETHING GOOD</span><span>© <span id="preview-year"></span></span></footer>
+        </div>
+      </div>
+      <div class="preview-footnote"><span>01</span><span class="footnote-line"></span><span id="preview-status">A canvas, ready for your story</span><span class="preview-footnote-right">BUILT TO BE YOURS</span></div>
+    </section>
+  </main>
+</body>
+</html>
