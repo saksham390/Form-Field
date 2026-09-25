@@ -26,6 +26,10 @@ mvn package
 java -jar target/portfolio-maker-0.0.1-SNAPSHOT.jar
 ```
 
+## Deploy on Render
+
+Use the [Render deploy link](https://render.com/deploy?repo=https://github.com/saksham390/Form-Field) or create a Blueprint in Render and select this repository. Render builds the app from `Dockerfile`; when prompted, enter `GEMINI_API_KEY` in the service's environment settings. Keep the key in Render's secret environment configuration, never in this repository. Render will provide the public `onrender.com` URL after the first successful deployment.
+
 Optional configuration:
 
 - `GEMINI_MODEL` selects the model (defaults to `gemini-2.5-flash`).
